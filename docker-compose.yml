@@ -1,0 +1,17 @@
+services:
+  mariadb:
+    image: mariadb:10.6
+    container_name: mariadbtest
+    environment:
+      MYSQL_ROOT_PASSWORD: root-pass
+    ports:
+      - "3306:3306"
+
+  neo4j:
+    image: neo4j:5.9.0
+    container_name: neo4j
+    ports:
+      - "7474:7474"
+      - "7687:7687"
+    environment:
+      NEO4J_AUTH: none
